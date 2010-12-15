@@ -1,14 +1,13 @@
 package com.gamefarmework.core.mvc
 {
-	import com.gamefarmework.core.parttens.Observer.IObservedObject;
-
-	public interface IModel extends IObservedObject 
+	
+	public interface IModel 
 	{
 
-		public function Destroy():void;
+		function Destroy():void;
 
-		public function GetProxy():IProxy;
+		function GetProxy():IProxy;
 
-		public function SetProxy(proxy:IProxy):void;
+		function SetProxy(proxy:IProxy):void;
 	}
 }
