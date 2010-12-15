@@ -1,12 +1,11 @@
 package com.gamefarmework.core.mvc
 {
-	import com.gamefarmework.core.parttens.Observer.IObserver;
 
-	public interface IController extends IObserver 
+	public interface IController 
 	{
 
-		public function RegisterObservedNotification():void;
+		function RegisterObservedNotification():void;
 
-		public function ReomveObservedNotification():void;
+		function ReomveObservedNotification():void;
 	}
 }
