@@ -2,6 +2,7 @@
 <flexLibProperties includeAllClasses="true" version="3">
   <includeClasses>
     <classEntry path="com.gamefarmework.core.parttens.Observer.ObservedObject"/>
+    <classEntry path="com.gamefarmework.core.parttens.Observer.Observer"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
