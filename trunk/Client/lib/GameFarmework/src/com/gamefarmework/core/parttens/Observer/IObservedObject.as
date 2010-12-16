@@ -45,6 +45,6 @@ package com.gamefarmework.core.parttens.Observer
 		 * @param value
 		 * 
 		 */
-		function NotifyObserver(notification:Object, value:Object):void;
+		function NotifyObserver(notification:Object, value:Object = null):void;
 	}
 }
