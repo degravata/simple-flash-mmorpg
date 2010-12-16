@@ -3,6 +3,11 @@
   <includeClasses>
     <classEntry path="com.gamefarmework.core.parttens.Observer.ObservedObject"/>
     <classEntry path="com.gamefarmework.core.parttens.Observer.Observer"/>
+    <classEntry path="com.gamefarmework.core.mvc.AbsProxy"/>
+    <classEntry path="com.gamefarmework.core.mvc.AbsModel"/>
+    <classEntry path="com.gamefarmework.core.mvc.absView"/>
+    <classEntry path="com.gamefarmework.core.Managment.Heartbeat"/>
+    <classEntry path="com.gamefarmework.core.Managment.Keyboards"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

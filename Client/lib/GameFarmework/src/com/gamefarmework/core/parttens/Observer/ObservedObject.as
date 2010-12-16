@@ -89,7 +89,7 @@ package com.gamefarmework.core.parttens.Observer
 			}
 		}
 		
-		public function NotifyObserver(notification:Object, value:Object):void
+		public function NotifyObserver(notification:Object, value:Object = null):void
 		{
 			var vct:Vector.<IObservedObject> = _dic[notification];
 			//判断是否有此通知列表
