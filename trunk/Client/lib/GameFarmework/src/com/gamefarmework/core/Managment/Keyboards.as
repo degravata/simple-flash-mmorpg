@@ -7,13 +7,20 @@ package com.gamefarmework.core.Managment
 	
 	public class Keyboards implements IKeyboards
 	{
-		private static var _instance:
+		private static var _instance:IKeyboards;
 		
 		private var _stage:Stage;
 		/**
 		 *  
 		 */
 		private var _dic:Dictionary;
+		
+		public static function GetInstance():IKeyboards
+		{
+			if(_instance == null) _instance = new Keyboards();
+			return _instance;
+		}
+		
 		
 		public function Keyboards()
 		{
@@ -22,6 +29,7 @@ package com.gamefarmework.core.Managment
 		
 		public function StartKeyboard(stage:Stage):void
 		{
+			StopKeyboard()
 			if(stage == null) return;
 			_stage = stage;
 			_stage.addEventListener(KeyboardEvent.KEY_DOWN,onKeyDown);
@@ -30,6 +38,7 @@ package com.gamefarmework.core.Managment
 		
 		public function StopKeyboard():void
 		{
+			if(_stage == null) return;
 			_stage.removeEventListener(KeyboardEvent.KEY_DOWN,onKeyDown);
 			_stage.removeEventListener(KeyboardEvent.KEY_UP,onKeyUp);
 			_stage = null;
@@ -57,42 +66,73 @@ package com.gamefarmework.core.Managment
 			alt:Boolean,
 			shift:Boolean):void
 		{
-			
+			var key:String = GetKeyboardKey(
+				keycode, keydown, keyup,
+				ctrl, alt, shift);
+			var funs:Vector.<Function> = _dic[key];
+			if(funs != null)
+			{
+				for each(var fun:Function in funs)
+				{
+					fun();
+				}
+			}
 		}
 		
 		public function RegisterKeyboardHandle(
 			handle:Function,
 			keycode:int,
-			keydown:Boolean,
-			keyup:Boolean, 
-			ctrl:Boolean,
-			alt:Boolean,
-			shift:Boolean
+			keydown:Boolean = false,
+			keyup:Boolean	= false, 
+			ctrl:Boolean	= false,
+			alt:Boolean		= false,
+			shift:Boolean	= false
 		):void
 		{
 			var key:String = GetKeyboardKey(
 				keycode, keydown, keyup,
 				ctrl, alt, shift);
-			if(_dic[key] == null)
+			var funs:Vector.<Function> = _dic[key];
+			if(funs == null)
 			{
-			
+				funs = new Vector.<Function>;
+				_dic[key] = funs;
 			};
 			
+			funs.push(handle);
 		}
 		
 		public function RemoveKeyboardHandle(
 			handle:Function,
 			keycode:int,
-			keydown:Boolean,
-			keyup:Boolean,
-			ctrl:Boolean,
-			alt:Boolean,
-			shift:Boolean):void
+			keydown:Boolean = false,
+			keyup:Boolean	= false,
+			ctrl:Boolean	= false,
+			alt:Boolean		= false,
+			shift:Boolean	= false
+		):void
 		{
 			var key:String = GetKeyboardKey(
 				keycode, keydown, keyup,
 				ctrl, alt, shift);
-			if(_dic[key] == null) return;
+			var funs:Vector.<Function> = _dic[key];
+			
+			if(funs == null) return;
+			var i:int = 0;
+			for each(var fun:Function in funs)
+			{
+				if(fun ==handle)
+				{
+					funs.splice(i,1);
+					break;
+				}
+				i++;
+			}
+			if(funs.length == 0)
+			{
+				_dic[key] = null;
+				delete _dic[key];
+			}
 		}
 		
 		private function GetKeyboardKey(
