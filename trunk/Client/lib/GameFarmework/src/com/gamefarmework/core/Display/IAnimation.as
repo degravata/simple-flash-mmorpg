@@ -1,4 +1,4 @@
-package Display.Animation 
+package com.gamefarmework.core.Display
 {
 	
 	/**

@@ -49,6 +49,7 @@ package com.gamefarmework.core.Managment
 			UpKeyboardHandle(
 				e.keyCode,true,false,
 				e.ctrlKey,e.altKey,e.shiftKey);
+			e.stopPropagation();
 		}
 		
 		private function onKeyUp(e:KeyboardEvent):void
@@ -56,6 +57,7 @@ package com.gamefarmework.core.Managment
 			UpKeyboardHandle(
 				e.keyCode,false,true,
 				e.ctrlKey,e.altKey,e.shiftKey);
+			e.stopPropagation();
 		}
 		
 		public function UpKeyboardHandle(
