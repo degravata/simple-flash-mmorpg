@@ -1,54 +1,30 @@
 package com.gamefarmework.core.Display
 {
-	
-	import flash.display.Bitmap;
-	import flash.display.BitmapData;
-	
-	public class BmdAnimation extends Bitmap implements IAnimation
+	public class BmdAnimation implements IAnimation
 	{
-		private var _curentFrame:int;
-		private var _totalFrames:int;
-		
-		public function BmdAnimation(
-			bitmapData:BitmapData=null,
-			pixelSnapping:String="auto",
-			smoothing:Boolean=false)
-		{
-			super(bitmapData, pixelSnapping, smoothing);
-		}
-		
-		public function get curentFrame():int
-		{
-			return 0;
-		}
-		
-		public function get totalFrames():int
-		{
-			return 0;
-		}
-		
-		public function gotoAndPlay(frame:int):void
+		public function BmdAnimation()
 		{
 		}
 		
-		public function gotoAndStop(frame:int):void
+		public function StartAnimation():void
 		{
 		}
 		
-		public function nextFrame():void
+		public function StopAnimation():void
 		{
 		}
 		
-		public function prevFrame():void
+		public function PauseAnimation():void
 		{
 		}
 		
-		public function play():void
+		public function ResetAnimation():void
 		{
 		}
 		
-		public function stop():void
+		public function isAnimation():Boolean
 		{
+			return false;
 		}
 	}
 }

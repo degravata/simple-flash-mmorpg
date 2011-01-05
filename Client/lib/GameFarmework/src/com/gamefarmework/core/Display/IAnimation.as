@@ -7,43 +7,32 @@ package com.gamefarmework.core.Display
 	 */
 	public interface IAnimation 
 	{
-		/**
-		 * [只读 (read-only)] 所处的帧。 
-		 */
-		function get curentFrame():int;
-		/**
-		 * [只读 (read-only)] 帧的总数。
-		 */
-		function get totalFrames():int;
 		
 		/**
-		 * 从指定帧开始播放
-		 * @param	frame 帧
+		 * 播放动画
 		 */
-		function gotoAndPlay(frame:int):void
-		/**
-		 * 移到指定帧并停在那里。 
-		 * @param	frame 帧
-		 */
-		function gotoAndStop(frame:int):void
+		function StartAnimation():void;
 		
 		/**
-		 * 转到下一帧并停止。 
+		 * 停止播放动画
 		 */
-		function nextFrame():void;
-		/**
-		 * 转到前一帧并停止。 
-		 */
-		function prevFrame():void;
+		function StopAnimation():void;
 		
 		/**
-		 * 从当前帧开始播放
+		 * 暂停播放动画
 		 */
-		function play():void;
+		function PauseAnimation():void;
+		
 		/**
-		 * 停在当前帧
+		 * 动画复位
 		 */
-		function stop():void;
+		function ResetAnimation():void;
+		/**
+		 * 是否正在播放 
+		 * @return 
+		 * 
+		 */
+		function isAnimation():Boolean
 	}
 	
 }
