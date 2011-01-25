@@ -6,7 +6,7 @@ package com.gamefarmework.core.mvc
 	import flash.display.DisplayObject;
 	import flash.events.Event;
 
-	public class absView implements IView
+	public class AbsView implements IView
 	{
 		public static const NOTIFICATION_CHANAGE_DISPLAY:int	= -1;
 		public static const NOTIFICATION_DESTROY_VIEW:int		= -2;	
@@ -14,7 +14,7 @@ package com.gamefarmework.core.mvc
 		protected var _observedObject:IObservedObject;
 		protected var _display:DisplayObject;
 		
-		public function absView()
+		public function AbsView()
 		{
 			_observedObject = new ObservedObject;
 			_display = null;
