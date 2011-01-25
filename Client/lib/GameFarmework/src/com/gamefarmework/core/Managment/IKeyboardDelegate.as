@@ -2,7 +2,7 @@ package com.gamefarmework.core.Managment
 {
 	import flash.display.Stage;
 
-	public interface IKeyboards 
+	public interface IKeyboardDelegate 
 	{
 
 		function StartKeyboard(stage:Stage):void;
