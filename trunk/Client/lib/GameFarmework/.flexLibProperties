@@ -5,7 +5,7 @@
     <classEntry path="com.gamefarmework.core.parttens.Observer.Observer"/>
     <classEntry path="com.gamefarmework.core.mvc.AbsProxy"/>
     <classEntry path="com.gamefarmework.core.mvc.AbsModel"/>
-    <classEntry path="com.gamefarmework.core.mvc.absView"/>
+    <classEntry path="com.gamefarmework.core.mvc.AbsView"/>
     <classEntry path="com.gamefarmework.core.Managment.Heartbeat"/>
     <classEntry path="com.gamefarmework.core.Managment.Keyboards"/>
     <classEntry path="com.gamefarmework.core.Display.BmdAnimation"/>
