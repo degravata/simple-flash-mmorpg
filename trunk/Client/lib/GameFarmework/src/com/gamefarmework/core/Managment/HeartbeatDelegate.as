@@ -7,7 +7,7 @@ package com.gamefarmework.core.Managment
 	import flash.utils.Timer;
 	import flash.utils.getTimer;
 
-	public class Heartbeat implements IHeartbeat
+	public class HeartbeatDelegate implements IHeartbeatDelegate
 	{
 		/**
 		 * this:[key:<v>time int</v>,value:<v>dic dictionary</v>]
@@ -17,15 +17,15 @@ package com.gamefarmework.core.Managment
 		private var _heratbeatDic:Dictionary;
 		private var _time:Timer;
 		private var _clstime:int = 0;
-		private static var _instance:Heartbeat;
+		private static var _instance:HeartbeatDelegate;
 		
-		public static function GetInstance():IHeartbeat
+		public static function GetInstance():IHeartbeatDelegate
 		{
-			if(_instance == null) _instance = new Heartbeat();
+			if(_instance == null) _instance = new HeartbeatDelegate();
 			return _instance;
 		}
 		
-		public function Heartbeat()
+		public function HeartbeatDelegate()
 		{
 			_heratbeatDic = new Dictionary();
 			_time = new Timer(1);

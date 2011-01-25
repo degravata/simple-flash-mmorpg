@@ -5,9 +5,9 @@ package com.gamefarmework.core.Managment
 	import flash.ui.Keyboard;
 	import flash.utils.Dictionary;
 	
-	public class Keyboards implements IKeyboards
+	public class KeyboardDelegate implements IKeyboardDelegate
 	{
-		private static var _instance:IKeyboards;
+		private static var _instance:IKeyboardDelegate;
 		
 		private var _stage:Stage;
 		/**
@@ -15,14 +15,14 @@ package com.gamefarmework.core.Managment
 		 */
 		private var _dic:Dictionary;
 		
-		public static function GetInstance():IKeyboards
+		public static function GetInstance():IKeyboardDelegate
 		{
-			if(_instance == null) _instance = new Keyboards();
+			if(_instance == null) _instance = new KeyboardDelegate();
 			return _instance;
 		}
 		
 		
-		public function Keyboards()
+		public function KeyboardDelegate()
 		{
 			_dic = new Dictionary();
 		}

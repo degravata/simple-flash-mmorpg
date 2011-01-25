@@ -1,6 +1,6 @@
 package com.gamefarmework.core.Managment
 {
-	public interface IHeartbeat 
+	public interface IHeartbeatDelegate 
 	{
 
 		function StartHeartbeat():void;
